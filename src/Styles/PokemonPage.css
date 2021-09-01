@@ -1,0 +1,190 @@
+.poke-img{
+    display: flex;
+    margin-top: 70px;
+} 
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: 'BOLD';
+    src: url(./Fonts/QuartzoBold-W9lv.ttf) format('truetype'); 
+}
+
+.name {
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgb(255, 255, 255), #fff, rgb(255, 255, 255));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 10s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    font-family: 'BOLD';
+    font-size: 20rem;
+    color: white;
+    text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.089);
+}
+
+    @keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+
+.name-container{
+    justify-content: center;
+    display: flex;
+}
+
+.abilities{
+    font-family: 'BOLD';
+    font-size: 100px;
+    color: white;
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.actual-abilities{
+    font-family: 'BOLD';
+    font-size: 30px;
+    color: white;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.tpye{
+    font-family: 'BOLD';
+    font-size: 100px;
+    color: white;
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.actual-type{
+    font-family: 'BOLD';
+    font-size: 30px;
+    color: white;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.Pokeball-link{
+    font-family: 'BOLD';
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.wdiky{
+    font-family: 'BOLD';
+    font-size: 100px;
+    color: white;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center; 
+    text-decoration: none;   
+}
+
+.moves{
+    font-family: 'BOLD';
+    font-size: 100px;
+    color: white;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.actual-moves{
+    font-family: 'BOLD';
+    font-size: 30px;
+    color: white;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.Home-link{
+    font-family: 'BOLD';
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.nav-links{
+    display: flex;
+    list-style-type: none;
+    position: fixed;
+}
+
+.moves-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.evolution{
+    font-family: 'BOLD';
+    font-size: 100px;
+    color: white;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.list-evolution{
+    font-family: 'BOLD';
+    font-size: 30px;
+    color: white;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.evo-links{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    margin-left: 850px;
+}
+
+.games{
+    font-family: 'BOLD';
+    font-size: 30px;
+    color: white;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.games-container{
+    display: flex;
+    height: 30px;
+    justify-content: center;
+}
+
+.title-game{
+    font-family: 'BOLD';
+    font-size: 100px;
+    color: white;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}

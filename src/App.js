@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  StaticRouter,
+  Route,
+  Switch
+} from "react-router-dom";
+import Homepage from "./Components/Homepage";
+import PokemonPage from "./Components/PokemonPage";
+import Pokeball from "./Components/Pokeball";
+import './Styles/App.css';
+import { useRef } from 'react'
+import GameIndices from "./Components/GameIndices";
 
 function App() {
+
+  const constraintsRef = useRef(null)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className ='App' ref={constraintsRef}>
+        <Router>
+          <div className= 'content'>
+          <Switch>
+            <Route exact path='/' >
+              <Homepage />
+            </Route>
+            <Route path='/pokemon/:name'>
+              <PokemonPage/>
+            </Route>
+            <Route path='/pokeball'>
+              <Pokeball constraintsRef={constraintsRef}/>
+            </Route>
+            <Route path='/gameinfo/:name'>
+              <GameIndices/>
+            </Route>
+          </Switch>
+          </div>
+        </Router>
+      </div>
   );
 }
 
