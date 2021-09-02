@@ -21,9 +21,9 @@ function GameIndices() {
         }, [])
 
     return (
-        <div>
+        <div class='d-flex'>
             <div className='title-game'>
-                GAMES THAT THIS POKEMON IS IN:
+            <img class='Gameboy' src='/Images/gameboy.png' width='150px'/>GAMES THAT THIS POKEMON IS IN:
             </div>
             {gameData.map(game => {
                 return(

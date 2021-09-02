@@ -22,7 +22,13 @@ function PokemonPage() {
         fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
             .then(res => res.json())
             .then(data => {
+                console.log("data: ", data)
+                console.log("data.types: ", data.types)
+                let pokemonType = data.types[0].type.name
+                document.body.classList = []
+                document.body.classList.add(pokemonType)
                 setSearchResults(data) 
+
                 console.log(data.game_indices)
                 dispatch(actionGetGameInfo(data.game_indices))
                 return fetch(data.species.url).then(res => res.json())
@@ -62,7 +68,7 @@ function PokemonPage() {
                     })}
                     <div className='evolution-container'>
                         <div className='evolution'>EVOLUTIONS</div>
-                        <Evolution data={evolutionData}/>
+                        <Evolution data={evolutionData} searchResults={searchResults}/>
                     </div>
                 <div className='abilities-container'>
                     <div className='abilities'>ABILITIES</div>
@@ -73,6 +79,19 @@ function PokemonPage() {
                         </div>
                         )
                     })}
+                <div className='stats'>STATS</div>
+                    <div className='stats-container'>
+                        {searchResults.stats.map(result => {
+                            return(
+                                <div style={{display: 'flex',
+                                            justifyContent: 'center'}}>
+                                    <p className='actual-stats stat-name'>{result.stat.name.split('-').join(' ').toUpperCase()}:</p>
+                                    <p className='actual-stats'>{result.base_stat}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
                 <div className='moves'>MOVES</div>
                     <div className='moves-container'>
                     {searchResults.moves.map(result => {
@@ -86,7 +105,6 @@ function PokemonPage() {
                 <div className='wdiky-container'>
                     {/* <a href='/gameinfo' className='wdiky'>WHERE DO I KNOW YOU FROM?</a> */}
                     <Link to={`/gameinfo/${name}`} className='wdiky'>WHERE DO I KNOW YOU FROM?</Link>
-                </div>
                 </div>
                 </div>
             </div>

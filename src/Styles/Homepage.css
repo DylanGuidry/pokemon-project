@@ -5,6 +5,66 @@ body {
     overflow: hidden;
 }
 
+.fire{
+    background: linear-gradient(160deg, tomato, red 30%, orange 100%, yellow);
+}
+
+.normal{
+    background:linear-gradient(160deg, #242627, #2a2b2c 30%, #5c5c57 100%, #6d6e60)
+}
+
+.water{
+    background:linear-gradient(160deg, #013A6B, #013A6B 30%, #4CBFFF 100%, #4CBFFF)
+}
+
+.ice{
+    background:linear-gradient(160deg, #5e92be, #679fd1 30%, #feffff 100%, #f8f8f8)
+}
+
+.grass{
+    background:linear-gradient(160deg, #3aa837, #48c019 30%, #08700d 100%, #106d03)
+}
+
+.electric{
+    background:linear-gradient(160deg, #ffdd00, #ffdd00 30%, #fbb034 100%, #fbb034)
+}
+
+.dark{
+    background:linear-gradient(160deg, #000000, #000000 30%, #494949 100%, #5a5a5a)
+}
+
+.fairy{
+    background:linear-gradient(160deg, #e794e3, #e794e3 30%, #ffffff 100%, #ffffff)
+}
+
+.poison{
+    background:linear-gradient(160deg, #78259e, #78259e 30%, #4cdf09 100%, #4cdf09)
+}
+
+.fighting{
+    background:linear-gradient(160deg, #3f3f3f, #3a3a3a 30%, #423c1b 100%, #423c1b)
+}
+
+.ground{
+    background:linear-gradient(160deg, #836953, #836953 30%, #654321 100%, #654321)
+}
+
+.psychic{
+    background:linear-gradient(160deg, #6d11c2, #6d11c2 30%, #210641 100%, #210641)
+}
+
+.ghost{
+    background:linear-gradient(160deg, #ffffff, #757575 30%, #696969 100%, #525252)
+}
+
+.bug{
+    background:linear-gradient(160deg, #52ca3a, #52ca3a 30%, #395c38 100%, #395c38)
+}
+
+.rock{
+    background:linear-gradient(160deg, #5f5f5f, #5f5f5f 30%, #222222 100%, #222222)
+}
+
 @font-face {
     font-family: 'Pokemon';
     src: url(./Fonts/Alienscows-Bold-Trial.ttf) format('truetype');
