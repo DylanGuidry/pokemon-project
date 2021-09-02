@@ -23,13 +23,13 @@ function GameIndices() {
     return (
         <div class='d-flex'>
             <div className='title-game'>
-            <img class='Gameboy' src='/Images/gameboy.png' width='150px'/>GAMES THAT THIS POKEMON IS IN:
+            <img class='Gameboy' src='/Images/gameboy.png'/>GAMES THAT THIS POKEMON IS IN:
             </div>
             {gameData.map(game => {
                 return(
                 <div class='games-container'>
                     <div class='indivual-games'>
-                        <div class='games'>{game.version.name}</div>
+                        <div class='games'>Pokemon {game.version.name}</div>
                     </div>
                 </div>
                 )
