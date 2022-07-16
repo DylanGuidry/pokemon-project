@@ -23,7 +23,7 @@ function GameIndices() {
     return (
         <div class='d-flex'>
             <div className='title-game'>
-            <img class='Gameboy' src='/Images/gameboy.png'/>GAMES THAT THIS POKEMON IS IN:
+                GAMES THAT THIS POKEMON IS IN:
             </div>
             {gameData.map(game => {
                 return(

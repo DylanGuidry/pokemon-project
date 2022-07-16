@@ -192,12 +192,6 @@
     text-shadow: 7px 7px #00000013;
 }
 
-@media screen and (max-width:420px) {
-    .evolution {
-        font-size: 3.5rem;
-    }
-}
-
 .list-evolution{
     font-family: 'BOLD';
     font-size: 30px;
