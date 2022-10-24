@@ -25,7 +25,7 @@ function Homepage() {
         <>
             <div class='searchBox'>
                 <button onSubmit={handleSumbmit} class='searchButton' type='submit'><img src='/Images/pokeball.gif' width='30px' /></button>
-                <input class='searchInput' onKeyPress={handleKeyPress} value={searchInput} onChange={(e) => setsearchInput(e.target.value)} type='text' name='' placeholder='Press the Poké Ball...'></input>
+                <input class='searchInput' onKeyPress={handleKeyPress} value={searchInput} onChange={(e) => setsearchInput(e.target.value)} type='text' name='' placeholder='Search for a Pokemon...'></input>
             </div>
         </>
     )
