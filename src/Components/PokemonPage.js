@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import '../Styles/PokemonPage.css'
-import Aos from 'aos';
 import Evolution from './Evolution';
 import { useDispatch } from 'react-redux'
 import { actionGetGameInfo } from '../redux/actions/gameinfoaction'
@@ -12,43 +11,65 @@ function PokemonPage() {
     const [searchResults, setSearchResults] = useState(null)
     const [evolutionData, setEvolutionData] = useState(null)
     const dispatch = useDispatch()
-
-    useEffect(() => {
-        Aos.init({ duration:2000 });
-    }, [])
-
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error("This Pokemon does not exist! Please try again.");
+                }
+                return res.json();
+            })
             .then(data => {
-                console.log("data: ", data)
-                console.log("data.types: ", data.types)
-                let pokemonType = data.types[0].type.name
-                document.body.classList = []
-                document.body.classList.add(pokemonType)
-                setSearchResults(data) 
-
-                console.log(data.game_indices)
-                dispatch(actionGetGameInfo(data.game_indices))
-                return fetch(data.species.url).then(res => res.json())
+                let pokemonType = data.types[0].type.name;
+                document.body.classList = [];
+                document.body.classList.add(pokemonType);
+                setSearchResults(data);
+                console.log(data);
+                dispatch(actionGetGameInfo(data.game_indices));
+                return fetch(data.species.url).then(res => {
+                    if (!res.ok) {
+                        throw new Error("Failed to fetch the species data.");
+                    }
+                    return res.json();
+                });
             })
             .then(speciesdata => {
-                return fetch(speciesdata.evolution_chain.url).then(res => res.json())
+                return fetch(speciesdata.evolution_chain.url).then(res => {
+                    if (!res.ok) {
+                        throw new Error("Failed to fetch the evolution data.");
+                    }
+                    return res.json();
+                });
             })
             .then(data => {
-                setEvolutionData(data.chain)
+                setEvolutionData(data.chain);
             })
-    }, [name])
+            .catch(error => {
+                console.error("An error occurred:", error);
+                setError(error.toString());
+            });
+    }, [name]);
+    
+
+
+
+    if (error) {
+        return (
+            <div className='error'>{error}</div>
+        )
+    }
 
     return (
         <div>
             {searchResults && (
             <div>
                 <div>
-                    <ul class='nav-links'>
-                        <li><a class='Home-link' href='/'>Home</a></li>
-                        <li><a class='Pokeball-link' href='/pokeball'>Pokeball</a></li>
+                    <ul className='nav-links'>
+                        <li><a className='Home-link' href='/'>Home</a></li>
+                        <li><a className='Pokeball-link' href='/pokeball'>Pokeball</a></li>
                     </ul>
                 </div>
                 <div data-aos='fade-up' className='container'>

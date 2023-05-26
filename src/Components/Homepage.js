@@ -21,11 +21,12 @@ function Homepage() {
         }
     }
 
+
     return (
         <>
-            <div class='searchBox'>
+            <div className='searchBox'>
                 <button onSubmit={handleSumbmit} class='searchButton' type='submit'><img src='/Images/pokeball.gif' width='30px' /></button>
-                <input class='searchInput' onKeyPress={handleKeyPress} value={searchInput} onChange={(e) => setsearchInput(e.target.value)} type='text' name='' placeholder='Search for a Pokemon...'></input>
+                <input className='searchInput' onKeyPress={handleKeyPress} value={searchInput} onChange={(e) => setsearchInput(e.target.value)} type='text' name='' placeholder='Search for a Pokemon...'></input>
             </div>
         </>
     )

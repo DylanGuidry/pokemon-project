@@ -21,15 +21,15 @@ function GameIndices() {
         }, [])
 
     return (
-        <div class='d-flex'>
+        <div className='d-flex'>
             <div className='title-game'>
                 GAMES THAT THIS POKEMON IS IN:
             </div>
             {gameData.map(game => {
                 return(
-                <div class='games-container'>
-                    <div class='indivual-games'>
-                        <div class='games'>Pokemon {game.version.name}</div>
+                <div className='games-container'>
+                    <div className='indivual-games'>
+                        <div className='games'>Pokemon {game.version.name}</div>
                     </div>
                 </div>
                 )

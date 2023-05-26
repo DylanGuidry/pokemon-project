@@ -5,6 +5,14 @@
     margin-top: 70px;
 } 
 
+.error {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'BOLD';
+    font-size: 300%;
+}
+
 .container{
     display: flex;
     justify-content: center;
