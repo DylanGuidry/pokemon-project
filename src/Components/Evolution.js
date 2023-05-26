@@ -9,7 +9,7 @@ function Evolution({data, searchResults}) {
     return (
         <ul className='list-evolution-container'>
             <li className='list-evolution'>
-                <Link class='evo-links' to={`/pokemon/${data.species.name}`}><img src='/Images/Candy.png' width='50px'/>
+                <Link className='evo-links' to={`/pokemon/${data.species.name}`}><img src='/Images/Candy.png' width='50px'/>
                 {data.species.name}
                 </Link>
                 {data.evolves_to.map((evolution) => {
